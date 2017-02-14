@@ -38,3 +38,4 @@ var chessBoard = function( limit) {
 // poundTriangle(7);
 // fizzBuzz();
 chessBoard(8);
+
