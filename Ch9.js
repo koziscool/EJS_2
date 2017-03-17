@@ -41,3 +41,4 @@ function verify(regexp, yes, no) {
     if (regexp.test(s))
       console.log("Unexpected match for '" + s + "'");
   });
+}
