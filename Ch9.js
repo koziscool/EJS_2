@@ -1,31 +1,31 @@
 
 // Fill in the regular expressions
 
-verify(/.../,
+verify(/ca[rt]/,
        ["my car", "bad cats"],
        ["camper", "high art"]);
 
-verify(/.../,
+verify(/pr?op/,
        ["pop culture", "mad props"],
        ["plop"]);
 
-verify(/.../,
+verify(/ferr(et|y|ari)/,
        ["ferret", "ferry", "ferrari"],
        ["ferrum", "transfer A"]);
 
-verify(/.../,
+verify(/\b\w*ious\b/,
        ["how delicious", "spacious room"],
        ["ruinous", "consciousness"]);
 
-verify(/.../,
+verify(/\s[.,:;]/,
        ["bad punctuation ."],
        ["escape the dot"]);
 
-verify(/.../,
+verify(/\w{7,}/,
        ["hottentottententen"],
        ["no", "hotten totten tenten"]);
 
-verify(/.../,
+verify(/\b[a-df-z]+\b/i,
        ["red platypus", "wobbling nest"],
        ["earth bed", "learning ape"]);
 
@@ -36,9 +36,13 @@ function verify(regexp, yes, no) {
   yes.forEach(function(s) {
     if (!regexp.test(s))
       console.log("Failure to match '" + s + "'");
+    else console.log('ok');
   });
   no.forEach(function(s) {
     if (regexp.test(s))
       console.log("Unexpected match for '" + s + "'");
+    else console.log('ok');
   });
 }
+
+
